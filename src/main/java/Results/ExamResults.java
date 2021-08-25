@@ -46,8 +46,14 @@ public class ExamResults {
 	public static void Overall (double Phy, double Chem, double Bio) {
 		if ((Phy+Chem+Bio)/4.50f >= 60.0 && Phy >90.0 && Chem >90.0 && Bio >90.0) {	
 			System.out.println("You have passed overall as you have passed all individual exams and reached an overall percentage above 60% - Congratulations :)");
-		} else { 
-			System.out.println("You have failed overall as you have failed at least one individual exam and/or not reached an overall percentage of 60% - Commiserations :(");
-		}
+		} if ((Phy+Chem+Bio)/4.50f <= 60.0) {
+				System.out.println("You failed overall as you did not achieve an overall percentage of 60% :(");
+			} if (Phy <90.0) {
+				System.out.println("You failed overall as you did not achieve an overall mark of 90.0 in Physics :(");
+			} if (Chem <90.0) {
+				System.out.println("You failed overall as you did not achieve an overall mark of 90.0 in Chemistry :(");
+			} if (Bio <90.0) {
+				System.out.println("You failed overall as you did not achieve an overall mark of 90.0 in Biology :(");
+			}
 	}
 }
